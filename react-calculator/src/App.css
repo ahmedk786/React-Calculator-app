@@ -1,0 +1,74 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  margin: 0;
+}
+
+.calculator {
+  background: linear-gradient(145deg, #f6d365, #fda085);
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  width: 350px;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+.display {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 2rem;
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  text-align: right;
+  box-shadow: inset 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+button {
+  padding: 20px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+button.operator {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+}
+
+button.equal {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+}
+
+button.clear {
+  background: linear-gradient(135deg, #f54ea2, #ff7676);
+}
