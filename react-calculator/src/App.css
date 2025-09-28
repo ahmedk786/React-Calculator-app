@@ -6,55 +6,56 @@ body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #667eea, #764ba2);
   margin: 0;
-  padding: 10px; /* small padding for very small screens */
+  padding: 10px;
 }
 
 .calculator {
   background: linear-gradient(145deg, #f6d365, #fda085);
-  padding: 20px;
-  border-radius: 25px;
+  padding: 5vw; /* relative padding */
+  border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
   width: 100%;
-  max-width: 350px; /* keeps it nice on larger screens */
+  max-width: 400px; /* max limit for big screens */
 }
 
 h1 {
   text-align: center;
   color: #fff;
-  margin-bottom: 15px;
-  font-size: 1.8rem;
+  margin-bottom: 1em;
+  font-size: clamp(1.2rem, 4vw, 2rem); /* responsive font size */
   text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
 }
 
 .display {
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
-  font-size: 1.8rem;
-  padding: 12px;
+  font-size: clamp(1.2rem, 5vw, 2rem); /* auto scales */
+  padding: 0.8em;
   border-radius: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 1em;
   text-align: right;
   box-shadow: inset 0 4px 8px rgba(0,0,0,0.2);
   word-wrap: break-word;
-  min-height: 50px;
+  min-height: 2.5em;
 }
 
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  gap: 0.6em;
 }
 
 button {
-  padding: 15px;
-  font-size: 1.3rem;
+  padding: 0.8em;
+  font-size: clamp(1rem, 4vw, 1.5rem); /* scales with screen */
   border: none;
-  border-radius: 15px;
+  border-radius: 12px;
   cursor: pointer;
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: #fff;
-  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
   transition: 0.3s;
+  width: 100%;
 }
 
 button:hover {
@@ -78,31 +79,12 @@ button.clear {
   background: linear-gradient(135deg, #f54ea2, #ff7676);
 }
 
-/* 📱 Mobile Responsive Fix */
-@media (max-width: 480px) {
-  .calculator {
-    padding: 15px;
-    border-radius: 20px;
-  }
-
-  h1 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-  }
-
-  .display {
-    font-size: 1.5rem;
-    padding: 10px;
-    min-height: 45px;
-  }
-
-  button {
-    padding: 12px;
-    font-size: 1.1rem;
-    border-radius: 12px;
-  }
-
+/* ✅ Extra Small Devices (<360px) */
+@media (max-width: 360px) {
   .buttons {
-    gap: 10px;
+    grid-template-columns: repeat(3, 1fr); /* 3 buttons per row for tiny phones */
+  }
+  .span-two {
+    grid-column: span 3;
   }
 }
