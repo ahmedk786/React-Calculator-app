@@ -1,12 +1,9 @@
-/* ✅ Always include this in HTML <head> */
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 /* ===== Global Styles ===== */
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* ensure full height on mobile */
+  min-height: 100vh; /* full height across devices */
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #667eea, #764ba2);
   margin: 0;
@@ -16,7 +13,7 @@ body {
 }
 
 * {
-  box-sizing: inherit; /* consistent sizing across elements */
+  box-sizing: inherit; /* consistent sizing */
 }
 
 /* ===== Calculator Box ===== */
@@ -26,7 +23,7 @@ body {
   border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
   width: 100%;
-  max-width: 400px; /* limit size on larger screens */
+  max-width: 400px; /* cap size on large screens */
 }
 
 /* ===== Heading ===== */
@@ -34,7 +31,7 @@ h1 {
   text-align: center;
   color: #fff;
   margin-bottom: 1em;
-  font-size: clamp(1.4rem, 5vw, 2rem); /* adjusts with screen */
+  font-size: clamp(1.4rem, 5vw, 2rem); /* responsive */
   text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
 }
 
@@ -114,9 +111,29 @@ button.clear {
 /* ===== Extra Small Devices (<360px) ===== */
 @media (max-width: 360px) {
   .buttons {
-    grid-template-columns: repeat(3, 1fr); /* stack better on tiny screens */
+    grid-template-columns: repeat(3, 1fr);
   }
   .span-two {
     grid-column: span 3;
+  }
+}
+
+/* ===== Tablets (481px–768px) ===== */
+@media (min-width: 481px) and (max-width: 768px) {
+  .calculator {
+    max-width: 500px;
+  }
+  h1 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+  }
+  button {
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+  }
+}
+
+/* ===== Laptops & Desktops (>768px) ===== */
+@media (min-width: 769px) {
+  .calculator {
+    max-width: 450px;
   }
 }
